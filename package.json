@@ -6,21 +6,42 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "ingest": "tsx --tsconfig tsconfig.json scripts/ingest.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.74",
+    "@mastra/core": "^1.35.0",
+    "@mastra/loggers": "^1.1.1",
+    "@mastra/memory": "^1.18.2",
+    "@mastra/observability": "^1.12.0",
+    "@mastra/pg": "^1.11.0",
+    "@mastra/rag": "^2.2.1",
+    "ai": "^6.0.183",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2",
+    "mastra": "^1.9.3",
     "next": "16.2.6",
+    "pdf-parse": "^2.4.5",
+    "pg": "^8.20.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
+    "tsx": "^4.22.0",
     "typescript": "^5"
   }
 }

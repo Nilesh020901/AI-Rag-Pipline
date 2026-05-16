@@ -1,0 +1,212 @@
+/* Berkshire RAG chat — imported as a normal stylesheet (no CSS modules). */
+.berkshire-chat {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.berkshire-chat-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.berkshire-chat-title {
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+}
+
+.berkshire-chat-sub {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.berkshire-chat-thread {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgb(37 99 235 / 0.35);
+  background: rgb(37 99 235 / 0.08);
+  align-self: center;
+}
+
+.berkshire-chat-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+  background: color-mix(in srgb, var(--foreground) 4%, transparent);
+  padding: 1rem;
+  min-height: 22rem;
+}
+
+.berkshire-chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  overflow-y: auto;
+  max-height: min(60vh, 32rem);
+  padding-right: 0.25rem;
+}
+
+.berkshire-chat-empty {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+.berkshire-msg {
+  border-radius: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.berkshire-msg-user {
+  align-self: flex-end;
+  background: rgb(37 99 235 / 0.18);
+  max-width: 92%;
+}
+
+.berkshire-msg-assistant {
+  align-self: stretch;
+  background: color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+.berkshire-msg-streaming {
+  outline: 1px dashed color-mix(in srgb, var(--foreground) 25%, transparent);
+}
+
+.berkshire-msg-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.berkshire-msg-body {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.berkshire-msg-paragraph {
+  margin: 0 0 0.35rem;
+}
+
+.berkshire-msg-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.berkshire-chat-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.berkshire-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgb(37 99 235);
+  animation: berkshire-pulse 1s ease-in-out infinite;
+}
+
+@keyframes berkshire-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.55;
+  }
+}
+
+.berkshire-chat-error {
+  font-size: 0.875rem;
+  color: rgb(185 28 28);
+  background: rgb(254 226 226 / 0.55);
+  border-radius: 0.65rem;
+  padding: 0.5rem 0.65rem;
+}
+
+.berkshire-chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.berkshire-chat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.65;
+}
+
+.berkshire-chat-input {
+  width: 100%;
+  resize: vertical;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
+  background: var(--background);
+  color: var(--foreground);
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  line-height: 1.45;
+}
+
+.berkshire-chat-input:focus {
+  outline: 2px solid rgb(37 99 235 / 0.45);
+  outline-offset: 1px;
+}
+
+.berkshire-chat-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.berkshire-chat-submit {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: rgb(37 99 235);
+  color: white;
+}
+
+.berkshire-chat-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .berkshire-chat {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .berkshire-chat-title {
+    font-size: 1.15rem;
+  }
+}
