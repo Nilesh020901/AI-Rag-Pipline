@@ -4,7 +4,6 @@ import { embedMany } from 'ai';
 import { ModelRouterEmbeddingModel } from '@mastra/core/llm';
 import { MDocument } from '@mastra/rag';
 import { eq } from 'drizzle-orm';
-import { PDFParse } from 'pdf-parse';
 import {
   BERKSHIRE_VECTOR_INDEX,
   CHUNK_OVERLAP,
@@ -28,6 +27,7 @@ function inferYearFromFilename(file: string): number | null {
 }
 
 async function extractPdfText(buffer: Buffer): Promise<string> {
+  const { PDFParse } = await import('pdf-parse');
   const parser = new PDFParse({ data: buffer });
   try {
     const result = await parser.getText();
